@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florentina și Petre Giurgi - Oficial | Muzică Tradițională Maramureș</title>
+    <meta name="description" content="Florentina și Petre Giurgi - 40+ ani muzică tradițională din Maramureș. Cetățeni de onoare Baia Mare. Stea Hollywood Walk of Fame.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --voronet-blue: #0047AB;
+            --bright-gold: #FFD700;
+            --crimson-red: #8B0000;
+            --flag-red: #E30613;
+            --dark-bg: #0A0A0A;
+            --light-bg: #F8F8F8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Merriweather', serif;
+            color: #1a1a1a;
+            background: 
+                radial-gradient(circle at 25% 75%, rgba(139, 101, 8, 0.4), transparent 60%),
+                radial-gradient(circle at 75% 25%, rgba(107, 84, 22, 0.5), transparent 60%),
+                linear-gradient(135deg, #6B5416 0%, #8B6508 20%, #B8860B 40%, #8B6508 60%, #6B5416 80%, #4A3C0F 100%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.12) 2px, rgba(0,0,0,.12) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,.12) 2px, rgba(0,0,0,.12) 4px);
+            pointer-events: none;
+            opacity: 0.7;
+            z-index: 0;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 50% 50%, transparent 20%, rgba(74, 60, 15, 0.4) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        /* Hero Section - Diagonal Romanian Flag */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--dark-bg);
+            z-index: 1;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(135deg, 
+                    var(--voronet-blue) 0%,
+                    var(--voronet-blue) 30%,
+                    var(--bright-gold) 30%,
+                    var(--bright-gold) 65%,
+                    var(--flag-red) 65%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .navbar.scrolled {
+                transform: translateY(0);
+            }
+            
+            .nav-logo {
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+            
+            .hero-content {
+                padding-top: 4rem;
+            }
+            
+            .hero h1 {
+                margin-bottom: 0.3rem;
+                line-height: 0.85;
+            }
+            
+            .hero-subtitle {
+                margin-bottom: 0.5rem;
+                letter-spacing: 2px;
+                font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+            }
+            
+            .hero-stats {
+                margin-top: 1.5rem;
+                gap: 1.5rem;
+            }
+            
+            .stat {
+                margin: 0;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+                margin-bottom: 0.2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(74, 60, 15, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: left 0.3s ease;
+                z-index: 1999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.5rem;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 8rem);
+            line-height: 0.9;
+            margin-bottom: 1.5rem;
+            text-shadow: 4px 4px 20px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 800;
+            letter-spacing: 6px;
+            color: var(--voronet-blue);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .stat {
+            animation: fadeInUp 1s ease-out backwards;
+        }
+        
+        .stat:nth-child(1) { animation-delay: 0.2s; }
+        .stat:nth-child(2) { animation-delay: 0.4s; }
+        .stat:nth-child(3) { animation-delay: 0.6s; }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: var(--voronet-blue);
+            display: block;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(74, 60, 15, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--bright-gold);
+            letter-spacing: 2px;
+            z-index: 2001;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--bright-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--bright-gold);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 2001;
+            padding: 10px;
+        }
+        
+        .nav-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--bright-gold);
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-logo {
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(74, 60, 15, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: left 0.3s ease;
+                z-index: 1999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.5rem;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+        }
+        
+        /* Section Base */
+        section {
+            position: relative;
+            padding: 8rem 5%;
+            z-index: 1;
+        }
+        
+        .section-title {
+            font-size: clamp(3rem, 6vw, 6rem);
+            color: var(--crimson-red);
+            margin-bottom: 4rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 200px;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                var(--voronet-blue), 
+                var(--bright-gold), 
+                var(--crimson-red));
+        }
+        
+        /* About - Overlapping Cards */
+        #about {
+            background: transparent;
+        }
+        
+        .about-intro {
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            text-align: center;
+        }
+        
+        .lead-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #2a2a2a;
+            font-weight: 700;
+        }
+        
+        .bio-section {
+            max-width: 1400px;
+            margin: 0 auto 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .bio-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
+            border-left: 8px solid var(--crimson-red);
+        }
+        
+        .bio-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--bright-gold);
+        }
+        
+        .bio-header h3 {
+            font-size: 2.5rem;
+            color: var(--crimson-red);
+            margin-bottom: 0.5rem;
+        }
+        
+        .birth-info {
+            font-size: 1.1rem;
+            color: var(--voronet-blue);
+            font-weight: 700;
+        }
+        
+        .bio-content p {
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            color: #2a2a2a;
+        }
+        
+        .bio-content p strong {
+            color: var(--crimson-red);
+            font-weight: 700;
+        }
+        
+        .love-story-section,
+        .family-section,
+        .philosophy-section {
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 10px 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .subsection-title {
+            font-size: 3rem;
+            color: var(--voronet-blue);
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .subsection-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--voronet-blue), var(--bright-gold));
+        }
+        
+        .story-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            color: #2a2a2a;
+        }
+        
+        .highlight-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--crimson-red);
+            text-align: center;
+            margin: 2rem 0 3rem;
+            font-style: italic;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, var(--voronet-blue), var(--crimson-red));
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 2.5rem 0;
+            position: relative;
+            box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            color: var(--bright-gold);
+            font-family: Georgia, serif;
+            opacity: 0.3;
+        }
+        
+        .quote-box p {
+            font-size: 1.2rem;
+            font-style: italic;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            color: white !important;
+        }
+        
+        /* Achievements - Bento Grid */
+        #achievements {
+            background: var(--dark-bg);
+            color: white;
+        }
+        
+        #achievements .section-title {
+            color: var(--bright-gold);
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .bento-card {
+            background: linear-gradient(135deg, rgba(0,71,171,0.8), rgba(220,20,60,0.8));
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255,215,0,0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .bento-card:hover::before {
+            left: 100%;
+        }
+        
+        .bento-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--bright-gold);
+            box-shadow: 0 20px 60px rgba(255,215,0,0.4);
+        }
+        
+        .bento-card:nth-child(1) {
+            grid-column: span 2;
+        }
+        
+        .bento-card:nth-child(4) {
+            grid-column: span 2;
+        }
+        
+        .bento-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .bento-card h3 {
+            font-size: 2rem;
+            color: var(--bright-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .bento-card p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Timeline - Modern Vertical */
+        #journey {
+            background: transparent;
+        }
+        
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            position: relative;
+        }
+        
+        .timeline-year {
+            font-size: 5rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: var(--voronet-blue);
+            text-align: right;
+            line-height: 1;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 10px 10px 40px rgba(0,0,0,0.1);
+            border-left: 8px solid var(--bright-gold);
+            position: relative;
+        }
+        
+        .timeline-content h3 {
+            font-size: 2.5rem;
+            color: var(--crimson-red);
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Music Platforms - Cards */
+        #music {
+            background: transparent;
+        }
+        
+        /* Music Platforms - Cards */
+        #music {
+            background: transparent;
+        }
+        
+        /* Gallery */
+        #gallery {
+            background: transparent;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Diplome Grid - More compact for documents */
+        .diplome-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .diploma-item {
+            position: relative;
+            aspect-ratio: 3/4;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 8px 8px 30px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .diploma-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .diploma-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 12px 12px 40px rgba(0,0,0,0.3);
+        }
+        
+        .diploma-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .diplome-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .diploma-item {
+                aspect-ratio: 3/4;
+            }
+        }
+        
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 15px 15px 60px rgba(0,0,0,0.3);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Placeholder styling */
+        .gallery-item.placeholder {
+            background: linear-gradient(135deg, rgba(0,71,171,0.3), rgba(139,0,0,0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed var(--bright-gold);
+        }
+        
+        .gallery-item.placeholder span {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: var(--bright-gold);
+            font-weight: 700;
+        }
+        
+        /* Gallery overlay on hover */
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,71,171,0.7), rgba(139,0,0,0.7));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        
+        /* Discography */
+        #discography {
+            background: transparent;
+        }
+        
+        .disco-intro {
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            text-align: center;
+        }
+        
+        .disco-category {
+            max-width: 1400px;
+            margin: 0 auto 6rem;
+        }
+        
+        .disco-category-title {
+            font-size: 2.5rem;
+            color: var(--voronet-blue);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .disco-category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--bright-gold);
+        }
+        
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .album-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 10px 10px 40px rgba(0,0,0,0.15);
+            border-left: 6px solid var(--crimson-red);
+            transition: all 0.3s ease;
+        }
+        
+        .album-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 15px 15px 50px rgba(0,0,0,0.25);
+        }
+        
+        .album-card.pricesne {
+            border-left-color: var(--voronet-blue);
+        }
+        
+        .album-card.colinde {
+            border-left-color: var(--bright-gold);
+        }
+        
+        .album-year {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--crimson-red);
+            margin-bottom: 1rem;
+        }
+        
+        .album-card.pricesne .album-year {
+            color: var(--voronet-blue);
+        }
+        
+        .album-card.colinde .album-year {
+            color: #B8860B;
+        }
+        
+        .album-card h4 {
+            font-size: 1.5rem;
+            color: var(--crimson-red);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .album-card.pricesne h4 {
+            color: var(--voronet-blue);
+        }
+        
+        .album-card.colinde h4 {
+            color: #8B6508;
+        }
+        
+        .album-studio {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .album-tracks {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2a2a2a;
+            margin-bottom: 1rem;
+        }
+        
+        .album-highlight {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.6;
+        }
+        
+        .disco-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 6rem auto 0;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, rgba(0,71,171,0.9), rgba(139,0,0,0.9));
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
+            border: 3px solid var(--bright-gold);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 15px 15px 60px rgba(255,215,0,0.4);
+        }
+        
+        .stat-number-big {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--bright-gold);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label-big {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: white;
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+        
+        .platform-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 10px 10px 40px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--voronet-blue), var(--bright-gold), var(--crimson-red));
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--voronet-blue);
+            box-shadow: 15px 15px 60px rgba(0,71,171,0.3);
+        }
+        
+        .platform-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .platform-card h3 {
+            font-size: 2rem;
+            color: var(--voronet-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .platform-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 1rem 2.5rem;
+            background: var(--crimson-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-link:hover {
+            background: var(--voronet-blue);
+            transform: scale(1.05);
+        }
+        
+        /* Contact - Split Design */
+        #contact {
+            background: var(--dark-bg);
+            color: white;
+        }
+        
+        #contact .section-title {
+            color: var(--bright-gold);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            color: var(--bright-gold);
+        }
+        
+        .contact-details h3 {
+            font-size: 2rem;
+            color: var(--bright-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-details a:hover {
+            color: var(--bright-gold);
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .social-link {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--voronet-blue), var(--crimson-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            font-size: 2.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .social-link:hover {
+            transform: scale(1.1) rotate(5deg);
+            border-color: var(--bright-gold);
+            box-shadow: 0 10px 40px rgba(255,215,0,0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--bright-gold);
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--bright-gold);
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .bio-section,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .timeline-year {
+                text-align: left;
+                font-size: 3rem;
+            }
+            
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .bento-card:nth-child(1),
+            .bento-card:nth-child(4) {
+                grid-column: span 1;
+            }
+            
+            .love-story-section,
+            .family-section,
+            .philosophy-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">GIURGI OFFICIAL</div>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#home">Acasă</a>
+                <a href="#about">Despre Noi</a>
+                <a href="#journey">Drumul Nostru</a>
+                <a href="#achievements">Distincții</a>
+                <a href="#diplome">Diplome</a>
+                <a href="#gallery">Galerie</a>
+                <a href="#music">Muzică</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>FLORENTINA<br>& PETRE<br>GIURGI</h1>
+            <p class="hero-subtitle">Muzică Tradițională Maramureș</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Ani Activitate</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1986</span>
+                    <span class="stat-label">Împreună</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">★</span>
+                    <span class="stat-label">Hollywood</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">Despre Noi</h2>
+        
+        <div class="about-intro">
+            <p class="lead-text">Florentina și Petre Giurgi sunt doi dintre cei mai îndrăgiți artiști populari din Maramureș, cu o activitate de peste 40 de ani dedicată păstrării și promovării folclorului autentic românesc.</p>
+        </div>
+
+        <div class="bio-section">
+            <div class="bio-card florentina-bio">
+                <div class="bio-header">
+                    <h3>Florentina Giurgi</h3>
+                    <p class="birth-info">Născută pe 11 iunie 1962, Poienile Izei, Maramureș</p>
+                </div>
+                
+                <div class="bio-content">
+                    <p>Florentina Giurgi (născută Hazotă) provine dintr-o familie înstărită și iubitoare de tradiții. Mama sa, Maria, și bunica sa au fost cele mai vestite horitoare din sat, glasul lor răsunând peste întreaga comună. Familia avea o mare avere — 150 de oi, pământuri întinse și o gospodărie impresionantă moștenită din generație în generație.</p>
+                    
+                    <p>De la vârsta de doar 5 ani, Florentina urca pe masă la petrecerile din Borșa și cânta pentru oamenii care lucrau la bunicii ei. Muzicanți renumiți precum Frații Petreuș și Gheorghe Stângău o ascultau cu drag și o susțineau. Atmosfera din casă era mereu plină de cântec și tradiție.</p>
+                    
+                    <p>La 14 ani, visul ei de a urma școala de muzică din Sighetu Marmației a fost întrerupt de bunici, care nu au putut suporta despărțirea de ea. Deși părinții ei au încercat să o înscrie la secțiunea de canto, locurile erau deja ocupate. Singura opțiune rămasă era flautul, dar după doar două săptămâni, bunicii au plecat după ea și au adus-o înapoi acasă. Bunica o cânta și plângea: "Floricica, draga moașii, de dorul tău eu oi murii, și la prohod tu mi vinii."</p>
+                    
+                    <p>Lipsită de posibilitatea de a studia muzica formal, Florentina și-a ales vioara și a luat lecții de la Gheorghe Florea, care ani mai târziu avea să devină cuscrul ei. Pe lângă muzică, a învățat să brodeze cămăși populare. Fără curent electric în casă, își făcea rost de o baterie de mașină și așa își lega becul de mașina de cusut pentru a avea lumină. Era una dintre singurele fete de pe Valea Izei care broda, având astfel multe comenzi, mai ales înainte de sărbători.</p>
+                </div>
+            </div>
+
+            <div class="bio-card petre-bio">
+                <div class="bio-header">
+                    <h3>Petre Giurgi</h3>
+                    <p class="birth-info">Născut pe 23 septembrie 1963, Poienile Izei, Maramureș</p>
+                </div>
+                
+                <div class="bio-content">
+                    <p>Petre Giurgi s-a născut într-o familie de țărani agricultori înstăriți din Poienile Izei. Tatăl său, Gheorghe, era un om foarte gospodar — oriunde mergea la lucru în câmp, se cunoștea munca lui. Mama sa, Maria, era la fel — o femeie gospodină și muncitoare. Petre a fost unicul lor fiu.</p>
+                    
+                    <p>Din dorința imensă de a cânta, părinții i-au cumpărat o vioară când era copil. Fără îndrumători și fără profesori, Petre a învățat singur să cânte — după intuiție și după simț. Când mergea la nunțile din sat cu părinții lui, stătea și îi asculta foarte atent pe ceterașii care cântau. El memora prima parte a melodiei, iar tatăl său — deși nu era muzicant — memora a doua parte. Acasă se completau la studiu.</p>
+                    
+                    <p>Tatăl său era sever și îl corecta tot timpul. Dacă auzea vreo greșeală, bătea în geam și zicea: "Măi Pătru, aici nu-i bine, aici așa trebuie să fie!" și îi fluiera melodia corectă. Petre studia zi și noapte, dorința lui de a deveni ceteraș fiind mai mare decât orice.</p>
+                    
+                    <p>De la vârsta de 14 ani a început să cânte la nunți. Îi era foarte greu — era nevoit să meargă pe jos în toate satele și să cânte la rece, fără sonorizare. Nunțile erau organizate în casele oamenilor — două camere și o tindă. Se punea o masă în tindă cu scaune pe ea, ținând locul scenei, și acolo se cânta ca să se audă în ambele camere. Devenise foarte cunoscut, iar prietenii îl numeau "Pruncu Stângău".</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="love-story-section">
+            <h3 class="subsection-title">Povestea Dragostei Noastre</h3>
+            
+            <div class="story-content">
+                <p class="highlight-text">Ne-am îndrăgostit în clasa a VI-a. Aveam doar 14 ani. De atunci, muzica și dragostea ne-au unit pentru totdeauna.</p>
+                
+                <p>În timpul celor opt clase de școală la Poienile Izei, am participat la serbări, spectacole și jocuri organizate de școală sau în satele vecine. Colegii noștri cântau la dobă și zongură, iar Petre cânta la ceteră. Eram nedespărțiți — pe scenă și în viață.</p>
+                
+                <div class="quote-box">
+                    <p>"Am avut noroc în viață, deoarece nu numai muzica ne-a legat, ci și dragostea. Ne-am potrivit de la început din toate punctele de vedere. A fost dat de la Dumnezeu să fim unul pentru celălalt."</p>
+                </div>
+                
+                <p>La vârsta de 18 ani și jumătate, pentru că ne-am potrivit și am cântat împreună, am decis să ne unim destinele. Din ambele părți, părinții nu au fost de acord — eram foarte tineri și Petre încă nu făcuse armata. Dar acest lucru nu ne-a împiedicat.</p>
+                
+                <p><strong>22 Mai 1982</strong> — Am făcut o nuntă mare, cu 600 de invitați din toată țara, cum nimeni nu mai văzuse până atunci. Două zile a ținut nunta, iar după a fost ospățul. Au cântat Frații Florea, care mai târziu au devenit parte din familie. Am respectat toate tradițiile maramureșene — cusutul steagului, horea miresii, bărbătescul, îmbălțuitul miresii.</p>
+            </div>
+        </div>
+
+        <div class="family-section">
+            <h3 class="subsection-title">Familia Noastră</h3>
+            
+            <p>În <strong>21 decembrie 1982</strong>, s-a născut fiica noastră, <strong>Mirela</strong> — cea mai mare binecuvântare din viețile noastre. La scurt timp după nașterea ei, Petre a fost chemat în armată (6 ianuarie 1983), iar Florentina a crescut singură fetița aproape doi ani.</p>
+            
+            <p>În <strong>7 martie 1984</strong>, a venit pe lume și fiul nostru, <strong>Gheorghe</strong> — a doua binecuvântare a vieții noastre.</p>
+            
+            <p>Ambii copii au urmat pasiunea noastră pentru muzică — Mirela a cântat la vioară, iar Gheorghe la oboi. Amândoi și-au terminat studiile la Liceul de Arte din Baia Mare. Astăzi avem doi nepoți minunați: <strong>Florentina Florea Giurgi</strong> (născută în 2006), care cântă vocal și a studiat pianul și flautul la Colegiul de Arte din Baia Mare, și <strong>Petrișor Giurgi</strong> (născut în 2003), care a cântat și el la vioară câțiva ani.</p>
+        </div>
+
+        <div class="philosophy-section">
+            <h3 class="subsection-title">Filozofia Noastră</h3>
+            
+            <div class="quote-box">
+                <p>"Cea mai mare bogăție este publicul nostru. Ne-au unit cântecul și sufletul. Fie că horesc, cântă pricesne sau colinde, publicul cântă alături de noi de fiecare dată."</p>
+            </div>
+            
+            <p>De peste 40 de ani, suntem dedicați promovării folclorului maramureșean. Am străbătut cu ritmurile tradiționale nu doar întreaga Românie, ci și lumea — am fost de 27 de ori în Statele Unite ale Americii, am cântat în Franța, Suedia, Austria, Germania, Iugoslavia, Bulgaria.</p>
+            
+            <p>Nu am fost doar artiști, ci mesageri ai folclorului românesc. Am urcat pe scenă cu mândrie și demnitate, purtând costumul popular și cântând despre viață, iubire, dor și natură, într-un mod care ajungea direct la sufletul oamenilor.</p>
+            
+            <p>Pentru noi, folclorul nu este doar muzică — este identitate, moștenire, suflet. Este legătura noastră cu strămoșii, cu pământul Maramureșului, cu tot ce suntem. Și această moștenire o transmitem mai departe — copiilor, nepoților, și tuturor celor care ne ascultă.</p>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements">
+        <h2 class="section-title">Distincții & Realizări</h2>
+        
+        <div class="bento-grid">
+            <div class="bento-card">
+                <span class="bento-icon">🏆</span>
+                <h3>3x Cetățeni de Onoare</h3>
+                <p><strong>Baia Mare (2008)</strong> - Pentru munca depusă în slujba folclorului românesc</p>
+                <p><strong>Sighetu Marmației (2008)</strong> - Recunoaștere pentru contribuția la cultura locală</p>
+                <p><strong>Poienile Izei (2023)</strong> - În cinstea satului natal, la "Hoarea Poienarilor"</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">⭐</span>
+                <h3>Hollywood Walk of Fame</h3>
+                <p><strong>11 iunie 2022</strong> - Stea pe Aleea Celebrităților, chiar de ziua Florentinei!</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">💿</span>
+                <h3>Disc de Aur - Colinde</h3>
+                <p><strong>Casa de Discuri EuroMusic (2012)</strong></p>
+                <p>Pentru vânzarea deosebită a albumelor:<br>"Colo-n Sus La Răsărit" și "Asta-i Sara De Crăciun"</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">💿</span>
+                <h3>Disc de Aur - Pricesne</h3>
+                <p><strong>Casa de Discuri EuroMusic (2012)</strong></p>
+                <p>Pentru albumele de muzică religioasă:<br>"Dă-ne Doamne Iarăși Unitate" și "Privește Doamne Acest Pământ"</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">💿</span>
+                <h3>Disc de Aur - Folclor</h3>
+                <p><strong>Casa de Discuri EuroMusic (2017)</strong></p>
+                <p>Pentru realizarea albumului "Doamne De Tăte Mi-ai Dat"</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">🎵</span>
+                <h3>40+ Ani Activitate</h3>
+                <p>De la nunta din <strong>22 mai 1982</strong> până astăzi - dedicare continuă muzicii populare maramureșene</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">🌍</span>
+                <h3>27 de Turnee în SUA</h3>
+                <p>Din 2004 până în prezent - Festival "Taste of Romania" și evenimente pentru diaspora românească</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">🎖️</span>
+                <h3>Diplomă de Excelență</h3>
+                <p><strong>22 iunie 2017</strong> - Pentru 35 ani de activitate artistică desfășurată</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">🏅</span>
+                <h3>Premiul Special</h3>
+                <p><strong>Gala Muzicii Populare Românești (2011)</strong><br>"Cea mai iubită familie de artiști" - Maramureș</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">🎤</span>
+                <h3>Marele Premiu</h3>
+                <p><strong>Festival "Alină-te dor, alină" (1991)</strong> - Cicârlău, ediția I. Florentina își lansează cariera vocală</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">📻</span>
+                <h3>Ansamblul Național Transilvania</h3>
+                <p>Activitate în cadrul ansamblului - Premiu la concurs internațional de folclor la Giurgiu (1994)</p>
+            </div>
+            
+            <div class="bento-card">
+                <span class="bento-icon">❤️</span>
+                <h3>Moștenire Culturală</h3>
+                <p>3 generații de artiști - nepoții Florentina Florea și Petrișor Giurgi continuă tradiția familiei</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section id="journey">
+        <h2 class="section-title">Drumul Nostru</h2>
+        
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-year">1976</div>
+                <div class="timeline-content">
+                    <h3>Primii Pași în Muzică</h3>
+                    <p><strong>Florentina</strong> - De la 5 ani cânta pe masă la petrecerile din Borșa pentru oamenii care lucrau la bunicii ei. Muzicanți renumiți precum Frații Petreuș și Gheorghe Stângău o ascultau cu drag.</p>
+                    <p><strong>Petre</strong> - Părinții i-au cumpărat o vioară și a învățat singur să cânte, după intuiție și simț. Mergea la nunți cu tatăl său și memorau melodiile împreună.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">1976</div>
+                <div class="timeline-content">
+                    <h3>Întâlnirea Destinului</h3>
+                    <p>La vârsta de 14 ani, în clasa a VI-a la școala din Poienile Izei, ne-am îndrăgostit. De atunci am rămas nedespărțiți - participam împreună la serbări și spectacole, Petre cânta la ceteră, colegii la dobă și zongură.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">1982</div>
+                <div class="timeline-content">
+                    <h3>Nunta & Începutul Carierei</h3>
+                    <p><strong>22 Mai 1982</strong> - O nuntă mare cu 600 de invitați din toată țara, două zile a ținut. Am respectat toate tradițiile maramureșene: cusutul steagului, horea miresii, bărbătescul, îmbălțuitul miresii. La scurt timp am plecat în turneu în Iugoslavia și Bulgaria cu profesorul Nicoară Timiș.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">1982-84</div>
+                <div class="timeline-content">
+                    <h3>Familia Crește</h3>
+                    <p><strong>21 decembrie 1982</strong> - S-a născut Mirela, fiica noastră. La scurt timp, Petre a plecat în armată (6 ianuarie 1983).</p>
+                    <p><strong>7 martie 1984</strong> - S-a născut Gheorghe, fiul nostru. Ambii copii au urmat pasiunea pentru muzică - Mirela la vioară, Gheorghe la oboi, terminând Liceul de Arte din Baia Mare.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">1991</div>
+                <div class="timeline-content">
+                    <h3>Lansarea Carierei Vocale</h3>
+                    <p>Florentina câștigă <strong>Marele Premiu</strong> la Festivalul "Alină-te dor, alină" (Cicârlău, ediția I). Președinta juriului, Mărioara Murărescu, ne spune: "Petre, tu ai cu cine cânta de azi înainte, așa vreau să vă văd!"</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">1994</div>
+                <div class="timeline-content">
+                    <h3>Prima Casetă</h3>
+                    <p>Lansăm prima casetă: <strong>"Pă Iza și pă Mara"</strong>, înregistrată la studioul Sonex din Zalău. Succesul este imens! Urmează casete de colinde: "Sara Crăciunului nost" și mai târziu "Noi în Sara de Crăciun".</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">1994-2007</div>
+                <div class="timeline-content">
+                    <h3>Ansamblul Național Transilvania</h3>
+                    <p>11 ani de activitate intensă - concerte, turnee, înregistrări. Premiu la concurs internațional de folclor la Giurgiu. Am urmat cursurile Conservatorului împreună cu fiica noastră, Mirela.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2004</div>
+                <div class="timeline-content">
+                    <h3>Primul Turneu în SUA</h3>
+                    <p>Invitați de impresarul Branko la marele festival românesc "Taste Of Romania". De atunci am fost de <strong>27 de ori în Statele Unite ale Americii</strong>, cântând pentru diaspora românească.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2005-06</div>
+                <div class="timeline-content">
+                    <h3>Generația a Treia</h3>
+                    <p><strong>2003</strong> - S-a născut Petrișor Giurgi (nepotul nostru)</p>
+                    <p><strong>2005</strong> - Nunta Mirelei cu Dani Florea (fiul lui Gheorghe Florea, cel care a învățat-o pe Florentina să cânte la vioară!)</p>
+                    <p><strong>2006</strong> - S-a născut Florentina Florea Giurgi (nepoata noastră), care cântă și ea vocal, studiind pianul și flautul la Colegiul de Arte din Baia Mare.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2007</div>
+                <div class="timeline-content">
+                    <h3>Casa de Cultură a Poliției de Frontieră</h3>
+                    <p>Ne mutăm la Sighetu Marmației. Petre preia conducerea Casei de Cultură, iar în 2008 și Florentina se angajează. Formăm Ansamblul "Pintea Viteazul". Primim titlul de Cetățeni de Onoare ai Sighetului.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2008</div>
+                <div class="timeline-content">
+                    <h3>Cetățeni de Onoare Baia Mare</h3>
+                    <p>Recunoaștere pentru munca depusă în slujba folclorului românesc. Lansare de colinde și folclor în Baia Mare, alături de Mărioara Murărescu.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2012</div>
+                <div class="timeline-content">
+                    <h3>Discuri de Aur</h3>
+                    <p>Casa de discuri EuroMusic ne acordă <strong>3 Discuri de Aur</strong>:</p>
+                    <p>• Pentru albumele de colinde "Colo-n Sus La Răsărit" și "Asta-i Sara De Crăciun"</p>
+                    <p>• Pentru albumele de pricesne "Dă-ne Doamne Iarăși Unitate" și "Privește Doamne Acest Pământ"</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2017</div>
+                <div class="timeline-content">
+                    <h3>35 de Ani Împreună</h3>
+                    <p>Disc de Aur pentru albumul "Doamne De Tăte Mi-ai Dat". Diplomă de Excelență pentru 35 ani de activitate artistică. Ne pensionăm din Inspectorat, dar continuăm să cântăm.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-content">
+                    <h3>Hollywood Walk of Fame</h3>
+                    <p>Chiar de ziua Florentinei, în <strong>11 iunie</strong>, ajungem pe Aleea Celebrităților de la Hollywood! Un vis împlinit după 40 de ani de muncă dedicată folclorului românesc.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2023</div>
+                <div class="timeline-content">
+                    <h3>Hoarea Poienarilor</h3>
+                    <p>Organizăm sărbătoarea "Hoarea Poienarilor" în comuna Poienile Izei, lansând albumul cu 20 de melodii, inclusiv "Hoarea Poienarilor" dedicată satului natal. Primim titlul de <strong>Cetățeni de Onoare ai comunei Poienile Izei</strong>. Sărbătoarea devine tradiție anuală, în a doua zi de Rusalii.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2024-26</div>
+                <div class="timeline-content">
+                    <h3>Astăzi</h3>
+                    <p>Continuăm să cântăm și să promovăm folclorul maramureșean. Nepoții noștri duc mai departe tradiția - Florentina Florea cântă vocal și a studiat pianul și flautul, iar Petrișor a cântat și el la vioară. Peste 40 de ani de carieră, 27 de turnee în SUA, 3 Discuri de Aur, și cel mai important - dragostea publicului nostru.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diplome Section -->
+    <section id="diplome">
+        <h2 class="section-title">Diplome și Certificare</h2>
+        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; color: rgba(255,255,255,0.9);">
+            40+ ani de muzică tradițională consacrați prin diplome, certificate de excelență și recunoașteri oficiale.
+        </p>
+        
+        <div class="diplome-grid">
+            <div class="diploma-item"><img src="diploma1.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma2.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma3.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma4.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma5.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma6.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma7.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma8.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma9.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma10.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma11.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma12.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma13.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma14.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma15.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma16.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma17.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma18.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma19.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma20.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma21.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma22.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma23.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma24.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma25.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma26.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma27.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma28.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma29.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma30.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma31.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma32.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma33.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma34.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma35.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma36.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma37.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma38.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma39.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+            <div class="diploma-item"><img src="diploma40.jpg" alt="Diplomă Florentina și Petre Giurgi" loading="lazy"></div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <h2 class="section-title">Galerie Foto</h2>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="photo1.jpg" alt="Florentina și Petre Giurgi cu familia în port popular maramureșean">
+            </div>
+            <div class="gallery-item">
+                <img src="photo2.jpg" alt="Florentina și Petre Giurgi în costum tradițional">
+            </div>
+            <div class="gallery-item">
+                <img src="photo3.jpg" alt="Familia Giurgi cu instrumentele tradiționale - vioară și dobă">
+            </div>
+            <div class="gallery-item">
+                <img src="photo4.jpg" alt="Florentina și Petre Giurgi la eveniment">
+            </div>
+            <div class="gallery-item">
+                <img src="photo5.jpg" alt="Artiștii Giurgi la Muzeul Satului cu instrumentele tradiționale">
+            </div>
+            <div class="gallery-item">
+                <img src="photo6.jpg" alt="Florentina Giurgi la războiul de țesut tradițional maramureșean">
+            </div>
+            <div class="gallery-item">
+                <img src="photo7.jpg" alt="Florentina și Petre Giurgi - portret elegant cu vioară">
+            </div>
+            <div class="gallery-item">
+                <img src="photo8.jpg" alt="Petre Giurgi cu vioara - portret de artist">
+            </div>
+            <div class="gallery-item">
+                <img src="photo9.jpg" alt="Florentina și Petre Giurgi la televiziune ZU TV">
+            </div>
+            <div class="gallery-item">
+                <img src="photo10.jpg" alt="Florentina și Petre Giurgi cu flori la eveniment elegant - Iulie 2024">
+            </div>
+            <div class="gallery-item">
+                <img src="photo11.jpg" alt="Florentina Giurgi cântând la nuntă - port tradițional maramureșean">
+            </div>
+            <div class="gallery-item">
+                <img src="photo12.jpg" alt="Florentina Giurgi cu nepoata - două generații de artiste">
+            </div>
+            <div class="gallery-item">
+                <img src="photo13.jpg" alt="Petre Giurgi cântând la vioară la festival - La Bozga-n Răbozău 2024">
+            </div>
+            <div class="gallery-item">
+                <img src="photo14.jpg" alt="Familia Giurgi cu nepoții la nuntă - arc de flori albe">
+            </div>
+            <div class="gallery-item">
+                <img src="photo15.jpg" alt="Florentina și Petre Giurgi cu artistă invitată la eveniment">
+            </div>
+            <div class="gallery-item">
+                <img src="photo16.jpg" alt="Florentina și Petre la hotel Wynn Las Vegas - lobby cu flori colorate">
+            </div>
+            <div class="gallery-item">
+                <img src="photo17.jpg" alt="Florentina și Petre Giurgi la hotel de lux - vacanță">
+            </div>
+            <div class="gallery-item">
+                <img src="photo18.jpg" alt="Diplomă Aniversară - recunoaștere oficială pentru cariera artistică">
+            </div>
+            <div class="gallery-item">
+                <img src="photo19.jpg" alt="Familia Giurgi cu toate instrumentele - vioară și dobă galbenă">
+            </div>
+            <div class="gallery-item">
+                <img src="photo20.jpg" alt="Florentina cu buchet de ziua ei - 11 iunie, tablouri pe perete">
+            </div>
+        </div>
+    </section>
+
+    <!-- Discografie -->
+    <section id="discography">
+        <h2 class="section-title">Discografie</h2>
+        
+        <div class="disco-intro">
+            <p class="lead-text">De-a lungul carierei noastre am înregistrat 7 albume de folclor maramureșean, 3 albume de pricesne (muzică religioasă), și 2 albume de colinde tradiționale - totalizând peste 150 de melodii înregistrate profesional.</p>
+        </div>
+
+        <div class="disco-category">
+            <h3 class="disco-category-title">Folclor Maramureșean</h3>
+            
+            <div class="album-grid">
+                <div class="album-card">
+                    <div class="album-year">1994</div>
+                    <h4>"Pă Iza și pă Mara"</h4>
+                    <p class="album-studio">Studio Sonex, Zalău</p>
+                    <p class="album-tracks">14 melodii • Prima noastră casetă</p>
+                    <p class="album-highlight">Include: "Ase o zâs oricine", "Pă Iza și pă Mara", "Joc de sărit di pă Iza"</p>
+                </div>
+                
+                <div class="album-card">
+                    <div class="album-year">1998</div>
+                    <h4>"Noi zinim di pă Iza"</h4>
+                    <p class="album-studio">Studio Sonex, Zalău</p>
+                    <p class="album-tracks">14 melodii</p>
+                    <p class="album-highlight">Include: "Horea miresii din Poienile Izei", "De mărs la cununie di pă Iza"</p>
+                </div>
+                
+                <div class="album-card">
+                    <div class="album-year">2004</div>
+                    <h4>"Mare-I lumea și nu-ncap"</h4>
+                    <p class="album-studio">AudioTim, Timișoara</p>
+                    <p class="album-tracks">20 melodii • Primul DVD video</p>
+                    <p class="album-highlight">Include: "Cetera-i inima me", "Învârtită din Poienile Izei"</p>
+                </div>
+                
+                <div class="album-card">
+                    <div class="album-year">2015</div>
+                    <h4>"Doamne de tăte mi-ai dat"</h4>
+                    <p class="album-studio">Ionuț Lucian Studio, Sighetu Marmației</p>
+                    <p class="album-tracks">20 melodii • 💿 Disc de Aur (2017)</p>
+                    <p class="album-highlight">Include: "Horea Poienarilor", "De la țară zin și eu"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="disco-category">
+            <h3 class="disco-category-title">Pricesne & Muzică Religioasă</h3>
+            
+            <div class="album-grid">
+                <div class="album-card pricesne">
+                    <div class="album-year">1994</div>
+                    <h4>"Dă-ne Doamne iarăși unitate"</h4>
+                    <p class="album-studio">Studio Sonex, Zalău</p>
+                    <p class="album-tracks">8 pricesne • 💿 Disc de Aur (2012)</p>
+                    <p class="album-highlight">În memoria părintelui Protopop Mociran</p>
+                </div>
+                
+                <div class="album-card pricesne">
+                    <div class="album-year">2006</div>
+                    <h4>"Privește Doamne acest pământ"</h4>
+                    <p class="album-studio">Casa de Discuri</p>
+                    <p class="album-tracks">10 pricesne • 💿 Disc de Aur (2012)</p>
+                    <p class="album-highlight">Include: "Maica Domnului ne cheamă", "Iisuse veșnic călător"</p>
+                </div>
+                
+                <div class="album-card pricesne">
+                    <div class="album-year">2006+</div>
+                    <h4>"Roagă-te și crede"</h4>
+                    <p class="album-tracks">Album de pricesne</p>
+                    <p class="album-highlight">Continuarea seriei de muzică religioasă</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="disco-category">
+            <h3 class="disco-category-title">Colinde Tradiționale</h3>
+            
+            <div class="album-grid">
+                <div class="album-card colinde">
+                    <div class="album-year">1998</div>
+                    <h4>"Colo-n sus la răsărit"</h4>
+                    <p class="album-studio">Studio Sonex, Zalău</p>
+                    <p class="album-tracks">15 colinde • 💿 Disc de Aur (2012)</p>
+                    <p class="album-highlight">Include: "Sara Crăciunului nost", "Raiule grădină verde"</p>
+                </div>
+                
+                <div class="album-card colinde">
+                    <div class="album-year">1998</div>
+                    <h4>"Asta-I sara de Crăciun"</h4>
+                    <p class="album-studio">Studio Sonex, Zalău</p>
+                    <p class="album-tracks">12 colinde • 💿 Disc de Aur (2012)</p>
+                    <p class="album-highlight">Include: "Nicio sărbătoare-n lume", "Fluierul cel păstoresc"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="disco-stats">
+            <div class="stat-box">
+                <div class="stat-number-big">9</div>
+                <div class="stat-label-big">Albume</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number-big">150+</div>
+                <div class="stat-label-big">Melodii</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number-big">3</div>
+                <div class="stat-label-big">Discuri de Aur</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number-big">30+</div>
+                <div class="stat-label-big">Ani Carieră</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music -->
+    <section id="music">
+        <h2 class="section-title">Ascultă Muzica Noastră</h2>
+        
+        <div class="platform-grid">
+            <div class="platform-card">
+                <div class="platform-icon">📺</div>
+                <h3>YouTube</h3>
+                <p>Catalog complet melodii</p>
+                <a href="#" class="platform-link">Vizitează</a>
+            </div>
+            
+            <div class="platform-card">
+                <div class="platform-icon">📺</div>
+                <h3>YouTube</h3>
+                <p>Melodii și spectacole</p>
+                <a href="https://www.youtube.com/@GiurgiOfficial" class="platform-link" target="_blank">Abonează-te</a>
+            </div>
+            
+            <div class="platform-card">
+                <div class="platform-icon">📱</div>
+                <h3>Instagram</h3>
+                <p>Povești din culise</p>
+                <a href="https://www.instagram.com/florentinasipetre/" class="platform-link" target="_blank">Urmărește</a>
+            </div>
+            
+            <div class="platform-card">
+                <div class="platform-icon">📘</div>
+                <h3>Facebook</h3>
+                <p>Conectează-te</p>
+                <a href="#" class="platform-link">Vizitează</a>
+            </div>
+            
+            <div class="platform-card">
+                <div class="platform-icon">🎬</div>
+                <h3>TikTok</h3>
+                <p>Momente scurte</p>
+                <a href="#" class="platform-link">Descoperă</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <a href="/cdn-cgi/l/email-protection#b3d5dfdcc1d6ddc7daddd2c3d6c7c1d6d4dac6c1d4daf3d4ded2dadf9dd0dcde"><span class="__cf_email__" data-cfemail="9cfaf0f3eef9f2e8f5f2fdecf9e8eef9fbf5e9eefbf5dcfbf1fdf5f0b2fff3f1">[email&#160;protected]</span></a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Locație</h3>
+                        <p>Maramureș, Valea Izei, România</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🎤</div>
+                    <div class="contact-details">
+                        <h3>Booking</h3>
+                        <p>Pentru evenimente și spectacole</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 style="font-size: 2.5rem; color: var(--bright-gold); margin-bottom: 2rem;">Urmărește-ne</h3>
+                <div class="social-grid">
+                    <a href="https://www.youtube.com/@GiurgiOfficial" class="social-link" target="_blank" title="YouTube">📺</a>
+                    <a href="https://www.instagram.com/florentinasipetre/" class="social-link" target="_blank" title="Instagram">📱</a>
+                    <a href="#" class="social-link" title="Facebook">📘</a>
+                    <a href="#" class="social-link" title="TikTok">🎬</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">FLORENTINA & PETRE GIURGI</div>
+        <p>40+ ani de muzică tradițională din inima Maramureșului</p>
+        
+        <div class="footer-links">
+            <a href="#about">Despre</a>
+            <a href="#achievements">Distincții</a>
+            <a href="#journey">Drumul Nostru</a>
+            <a href="#music">Muzică</a>
+            <a href="#contact">Contact</a>
+        </div>
+        
+        <p class="copyright">&copy; 2024 Florentina & Petre Giurgi. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links a');
+        const navbar = document.querySelector('.navbar');
+        
+        // Show/Hide navbar on scroll (mobile only)
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 768) {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                lastScroll = currentScroll;
+            }
+        });
+        
+        // Toggle menu on hamburger click
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Animate hamburger to X
+            const spans = navToggle.querySelectorAll('span');
+            if (navLinks.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(7px, 7px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+        
+        // Close menu when clicking on a link
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const spans = navToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+                const spans = navToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
